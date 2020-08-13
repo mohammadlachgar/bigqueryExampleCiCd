@@ -2,6 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
   entrypoint: 'bash'
+# Add secret "SERVICEACCOUNT_bigquery" to /security/secret-manager
 # Enable "Secret Manager" in cloud-build/settings  
   args:
     - '-c'
