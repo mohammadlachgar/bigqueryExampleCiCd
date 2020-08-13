@@ -13,4 +13,4 @@ touch ./union.sql
 
 #merge all content in 'hql_run' and 'sql_run' to one file "union.sql"
 find hql_run/. -type f -name "*.hql" | xargs cat > ./union.sql
-find sql_run/. -type f -name "*.sql" | xargs cat > ./union.sql
+find sql_run/. -type f -name "*.sql" | xargs cat >> ./union.sql
