@@ -5,12 +5,11 @@ steps:
   args:
     - '-c'
     - |
-      gcloud auth activate-service-account --key-file serviceaccount.json
+      mkdir -p ./creds
+      echo $SERVICEACCOUNT_bigquery | base64 -d > ./creds/serviceaccount.json
+      gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
+ #     gcloud auth activate-service-account --key-file serviceaccount.json
       bq --project_id=burnished-case-280710 query --nouse_legacy_sql < my_query.sql
-#  args: ['-c', 'mkdir -p ./creds']
-#  args: ['-c', 'echo ${{ secrets.SERVICEACCOUNT_bigquery }} > ./creds/serviceaccount.json']
- # args: ['-c', 'gcloud auth activate-service-account --key-file serviceaccount.json']
- # args: ['-c', 'bq --project_id=burnished-case-280710 query --nouse_legacy_sql < my_query.sql']
-#  args: ['run_query.sh', 'my_query.sql']
+
 
 
