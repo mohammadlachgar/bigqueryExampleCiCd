@@ -3,7 +3,7 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
   entrypoint: 'bash'
   args:
-    - c
+    - '-c'
     - |
       gcloud auth activate-service-account --key-file serviceaccount.json
       bq --project_id=burnished-case-280710 query --nouse_legacy_sql < my_query.sql
