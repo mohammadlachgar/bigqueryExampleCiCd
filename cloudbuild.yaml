@@ -1,5 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
-  args: ['run_query.sh', 'my_query.sql']
+  args: ['-c', 'bq --project_id=burnished-case-280710 query --nouse_legacy_sql < my_query.sql']
+#  args: ['run_query.sh', 'my_query.sql']
   
