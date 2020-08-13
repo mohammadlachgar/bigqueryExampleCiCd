@@ -8,7 +8,6 @@ steps:
       mkdir -p ./creds
       gcloud secrets versions access latest --secret=secret-data --format='get(payload.data)' | tr '_-' '/+' | base64 -d > ./creds/serviceaccount.json
       gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
- #     gcloud auth activate-service-account --key-file serviceaccount.json
       bq --project_id=burnished-case-280710 query --nouse_legacy_sql < my_query.sql
 
 
