@@ -10,5 +10,5 @@ s/(\n|\r)\s*\)\s*(\n|\r).*(\n*\r*\n*.*)*/\n);/g
 '
 
 #merge all content to one file
-find hql_run/. -type f -name "*.hql" | xargs cat > ./union.sql
+find hql_run/. -type f -name "*.hql" && find sql_run/. -type f -name "*.sql" | xargs cat > ./union.sql
 
