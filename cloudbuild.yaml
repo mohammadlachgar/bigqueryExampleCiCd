@@ -6,5 +6,11 @@ steps:
 # Enable "Secret Manager" in cloud-build/settings  
   args: ['run.sh']
 
+substitutions:
+    _location: US
+    _dataset: dataset_ex2
+    
+options:
+    dynamic_substitutions: true
 
 
