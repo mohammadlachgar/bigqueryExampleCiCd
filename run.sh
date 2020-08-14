@@ -10,7 +10,6 @@ gcloud secrets versions access latest --secret=$name_secret --format='get(payloa
 
 gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 
-# chmod +x ./cmd.sh  && ./cmd.sh
 chmod +x ./cmd.sh
 . ./cmd.sh
 
