@@ -2,6 +2,7 @@
 projectId="burnished-case-280710"
 location_bigquery="US"
 name_secret="SERVICEACCOUNT_bigquery"
+dataset="dataset_ex2"
 
 mkdir -p ./creds 
 
