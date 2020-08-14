@@ -13,7 +13,7 @@ steps:
       chmod +x ./cmd.sh  && ./cmd.sh
       bq --project_id=$PROJECT_ID --location=${_location} query --nouse_legacy_sql < union.sql
 substitutions:
-    _location: US # default value
-    _dataset: dataset_ex2 # default value
+    _location: US
+    _dataset: dataset_ex2
 
 
