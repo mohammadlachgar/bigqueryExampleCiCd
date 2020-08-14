@@ -1,7 +1,4 @@
 steps:
-substitutions:
-    _location: US # default value
-    _dataset: dataset_ex2 # default value
 - name: 'gcr.io/cloud-builders/gcloud'
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
   entrypoint: 'bash'
@@ -15,6 +12,8 @@ substitutions:
       gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
       chmod +x ./cmd.sh  && ./cmd.sh
       bq --project_id=$PROJECT_ID --location=${_location} query --nouse_legacy_sql < union.sql
-
+substitutions:
+    _location: US # default value
+    _dataset: dataset_ex2 # default value
 
 
