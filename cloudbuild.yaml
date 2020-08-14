@@ -1,3 +1,7 @@
+substitutions:
+  _location: US
+  _dataset: dataset_ex2
+  
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
@@ -12,10 +16,8 @@ steps:
       gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
       chmod +x ./cmd.sh  && ./cmd.sh
       bq --project_id=$PROJECT_ID --location=${_location} query --nouse_legacy_sql < union.sql
-    - ''
 
-substitutions:
-    _location: US
-    _dataset: dataset_ex2
+
+
 
 
