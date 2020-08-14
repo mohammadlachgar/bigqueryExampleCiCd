@@ -4,7 +4,7 @@
 find hql_run/. -type f -name "*.hql" -print0 | xargs -0 \
 sed -i -z -E \
 '
-s/(\$\(hiveconf:environemnt\)\w+)\.(\w+)/`'$projectId'.'$dataset'.\2`/g;
+s/(\$\(hiveconf:environemnt\)\w+)\.(\w+)/`'$projectId'.'$dataset_bigquery'.\2`/g;
 s/CREATE\s+EXTERNAL\s+TABLE/CREATE TABLE/g;
 s/(\n|\r)\s*\)\s*(\n|\r).*(\n*\r*\n*.*)*/\n);/g
 '
