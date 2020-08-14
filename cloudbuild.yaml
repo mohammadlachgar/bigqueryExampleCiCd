@@ -15,7 +15,7 @@ steps:
     - ''
 
 substitutions:
-    _location: "US"
-    _dataset: "dataset_ex2"
+    _location: US
+    _dataset: dataset_ex2
 
 
