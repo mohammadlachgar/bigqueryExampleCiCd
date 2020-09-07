@@ -9,6 +9,16 @@ s/CREATE\s+EXTERNAL\s+TABLE/CREATE TABLE/g;
 s/(\n|\r)\s*\)\s*(\n|\r).*(\n*\r*\n*.*)*/\n);/g
 '
 
+
+#set variables to sql files
+find sql_run/. -type f -name "*.sql" -print0 | xargs -0 \
+sed -i -z -E \
+'
+s/(\$project\$/`'$projectId'`/g;
+s/(\$dataset\$/`'$dataset_bigquery'`/g;
+'
+
+
 touch ./union.sql
 
 #merge all content in 'hql_run' and 'sql_run' to one file "union.sql"

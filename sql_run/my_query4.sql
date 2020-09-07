@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `burnished-case-280710.dataset_ex2.ST4`;
-CREATE TABLE `burnished-case-280710.dataset_ex2.ST4`
+DROP TABLE IF EXISTS `$project$.$dataset$.ST4`;
+CREATE TABLE `$project$.$dataset$.ST4`
 (
     `ADDRESS_ID444` STRING,
      `INDIVIDUAL_ID` STRING,
