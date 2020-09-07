@@ -14,8 +14,8 @@ s/(\n|\r)\s*\)\s*(\n|\r).*(\n*\r*\n*.*)*/\n);/g
 find sql_run/. -type f -name "*.sql" -print0 | xargs -0 \
 sed -i -z -E \
 '
-s/\$project\$/`'$projectId'`/g;
-s/\$dataset\$/`'$dataset_bigquery'`/g;
+s/\$project\$/'$projectId'/g;
+s/\$dataset\$/'$dataset_bigquery'/g;
 '
 
 
