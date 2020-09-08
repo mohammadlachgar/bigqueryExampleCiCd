@@ -27,7 +27,7 @@ echo " delete bazelversion"
 rm .bazelversion
 
 echo " bazel run"
-bazel run //zetasql/experimental:execute_query -- "select 1 + 1;"
+bazel --verbose_failures run //zetasql/experimental:execute_query -- "select 1 + 1;"
 
 #bq query --dry_run --nouse_legacy_sql < union.sql
 
