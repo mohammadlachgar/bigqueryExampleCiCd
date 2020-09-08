@@ -23,8 +23,15 @@ git clone https://github.com/google/zetasql.git
 echo " cd zetasql"
 cd zetasql
 
-echo " delete bazelversion"
-rm .bazelversion
+#echo " delete bazelversion"
+#rm .bazelversion
+
+cd "/builder" && curl -LO https://releases.bazel.build/1.0.0/release/bazel-1.0.0-linux-x86_64 && chmod +x bazel-1.0.0-linux-x86_64
+
+ls
+
+bazel version
+./bazel version
 
 echo " bazel run"
 bazel --verbose_failures run //zetasql/experimental:execute_query -- "select 1 + 1;"
