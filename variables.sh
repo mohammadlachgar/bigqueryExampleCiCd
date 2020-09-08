@@ -4,7 +4,7 @@
 projectId="burnished-case-280710"
 location_bigquery="US"
 #"SERVICEACCOUNT_bigquery"
-name_secret=serviceaccount-bigquery-storag
+name_secret="serviceaccount-bigquery-storag"
 dataset_bigquery="dataset_ex2"
 
 # projectId="winter-agility-288815"
