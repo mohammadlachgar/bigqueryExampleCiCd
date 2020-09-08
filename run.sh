@@ -14,6 +14,13 @@ gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 chmod +x ./cmd.sh
 . ./cmd.sh
 
+gcloud alpha remote-build-execution worker-pools create default \
+    --project=$projectId \
+    --instance=default_instance \
+    --worker-count=2 \
+    --machine-type=e2-micro \
+    --disk-size=20
+
 bazel version 
 
 ls
@@ -30,15 +37,10 @@ rm .bazelversion
 
 ls
 
-gcloud alpha remote-build-execution worker-pools create default \
-    --project=$projectId \
-    --instance=default_instance \
-    --worker-count=2 \
-    --machine-type=n1-highcpu-4 \
-    --disk-size=20
+
 
 echo " bazel run"
-bazel test --remote_cache=https://storage.googleapis.com/remote_cache //zetasql/experimental:execute_query -- "select 1 + 1;"
+bazel test --remote_cache=https://storage.googleapis.com/remote_cache //zetasql/experimental:execute_query --  < union.sql
 
 #bq query --dry_run --nouse_legacy_sql < union.sql
 
