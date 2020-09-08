@@ -21,28 +21,10 @@ gcloud alpha remote-build-execution worker-pools create default \
     --machine-type=e2-micro \
     --disk-size=20
 
-bazel version 
 
 ls
 
-echo" clone zetasql.git"
-git clone https://github.com/google/zetasql.git
-
-cp ./creds/serviceaccount.json zetasql/
-echo " cd zetasql"
-cd zetasql
-
-echo " delete bazelversion"
-rm .bazelversion
-
-ls
-
-
-
-echo " bazel run"
-bazel test --remote_cache=https://storage.googleapis.com/remote_cache //zetasql/experimental:execute_query --  < union.sql
-
-#bq query --dry_run --nouse_legacy_sql < union.sql
+bq query --dry_run --nouse_legacy_sql < union.sql
 
 #bq --project_id=$projectId --location=$location_bigquery query --nouse_legacy_sql < union.sql
 
