@@ -19,7 +19,7 @@ gcloud alpha remote-build-execution worker-pools create default \
     --instance=default_instance \
     --worker-count=2 \
     --machine-type=e2-micro \
-    --disk-size=20
+    --disk-size=200
 
 
 ls
