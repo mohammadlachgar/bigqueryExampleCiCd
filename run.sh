@@ -16,12 +16,19 @@ chmod +x ./cmd.sh
 
 gcloud alpha remote-build-execution worker-pools create default \
     --project=$projectId \
-    --instance=default_instance \
     --worker-count=2 \
     --machine-type=e2-micro \
     --disk-size=200
 
-
+# gcloud alpha builds worker-pools create gcb-workers-pool \
+#    --project=projectID  \
+#       --regions=us-central1 \
+#          --worker-count=2 \
+#             --worker-machine-type=n1-standard-1 \
+#                --worker-tag=gcb-worker-imagebuilder \
+#                   --worker-network-name=default \
+#                      --worker-network-project=projectID  \
+#                         --worker-network-subnet=default
 ls
 
 bq query --dry_run --nouse_legacy_sql < union.sql
