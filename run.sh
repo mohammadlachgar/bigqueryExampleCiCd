@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install bazel-1.0.0
+apt install bazel-1.0.0
 
 . ./variables.sh
 
