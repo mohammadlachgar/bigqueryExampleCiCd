@@ -1,6 +1,5 @@
 #!/bin/bash
 
-apt install bazel-1.0.0
 
 . ./variables.sh
 
@@ -17,12 +16,15 @@ chmod +x ./cmd.sh
 
 bazel version 
 
-echo" git clone https://github.com/google/zetasql.git"
+echo" clone zetasql.git"
 git clone https://github.com/google/zetasql.git
 
 
 echo " cd zetasql"
 cd zetasql
+
+echo " delete bazelversion"
+rm .bazelversion
 
 echo " bazel run"
 bazel run //zetasql/experimental:execute_query -- "select 1 + 1;"
