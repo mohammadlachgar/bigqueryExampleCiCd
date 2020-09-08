@@ -14,8 +14,8 @@ gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 chmod +x ./cmd.sh
 . ./cmd.sh
 
-#echo "-------------------- Test --------------------"
-#bq query --dry_run --nouse_legacy_sql < union.sql
+echo "-------------------- Test --------------------"
+bq query --dry_run --nouse_legacy_sql < union.sql
 
 echo "-------------------- Run --------------------"
 bq --project_id=$projectId --location=$location_bigquery query --nouse_legacy_sql < union.sql
