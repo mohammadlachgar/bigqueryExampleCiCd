@@ -25,8 +25,8 @@ cp ./creds/serviceaccount.json zetasql/
 echo " cd zetasql"
 cd zetasql
 
-#echo " delete bazelversion"
-#rm .bazelversion
+echo " delete bazelversion"
+rm .bazelversion
 
 ls
 
