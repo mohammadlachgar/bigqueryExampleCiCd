@@ -1,6 +1,6 @@
 steps:
-# - name: 'gcr.io/cloud-builders/bazel'
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/bazel'
+# - name: 'gcr.io/cloud-builders/gcloud'
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
   entrypoint: 'bash'
   args: ['run.sh']
