@@ -16,7 +16,6 @@ chmod +x ./cmd.sh
 
 gcloud alpha remote-build-execution worker-pools create default_instance \
     --project=$projectId \
-    --instance=default_instance \
     --worker-count=2 \
     --machine-type=e2-micro \
     --disk-size=200
