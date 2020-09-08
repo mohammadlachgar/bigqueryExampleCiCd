@@ -14,14 +14,6 @@ gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 chmod +x ./cmd.sh
 . ./cmd.sh
 
-gcloud alpha remote-build-execution worker-pools create default_instance \
-    --project=$projectId \
-    --worker-count=2 \
-    --machine-type=e2-micro \
-    --disk-size=200
-
-
-ls
 
 bq query --dry_run --nouse_legacy_sql < union.sql
 
