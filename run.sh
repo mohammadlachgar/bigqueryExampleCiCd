@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install bazel-1.0.0
+
 . ./variables.sh
 
 mkdir -p ./creds 
@@ -17,6 +19,7 @@ bazel version
 
 echo" git clone https://github.com/google/zetasql.git"
 git clone https://github.com/google/zetasql.git
+
 
 echo " cd zetasql"
 cd zetasql
