@@ -22,7 +22,7 @@ chmod +x ./cmd.sh
 #     --disk-size=200
 
 gcloud alpha builds worker-pools create gcb-workers-pool \
-   --project=projectID \
+   --project=$projectId \
       --regions=us-central1 \
          --worker-count=2 \
             --worker-machine-type=n1-standard-1 \
