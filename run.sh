@@ -18,6 +18,6 @@ echo"Test"
 bq query --dry_run --nouse_legacy_sql < union.sql
 
 echo"Run"
-#bq --project_id=$projectId --location=$location_bigquery query --nouse_legacy_sql < union.sql
+bq --project_id=$projectId --location=$location_bigquery query --nouse_legacy_sql < union.sql
 
 
