@@ -32,7 +32,7 @@ ls
 
 
 echo " bazel run"
-bazel test --remote_cache=https://storage.googleapis.com/remote_cache --google_credentials=./serviceaccount.json //zetasql/experimental:execute_query -- "select 1 + 1;"
+bazel run --remote_cache=https://storage.googleapis.com/remote_cache --google_credentials=serviceaccount.json //zetasql/experimental:execute_query -- "select 1 + 1;"
 
 #bq query --dry_run --nouse_legacy_sql < union.sql
 
